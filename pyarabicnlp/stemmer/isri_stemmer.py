@@ -1,12 +1,9 @@
-import snowballstemmer
-
-
-class SnowballStemmer:
+class ISRIStemmer:
     """[summary]
     """
 
     def __init__(self):
-        self.stemmer = snowballstemmer.ArabicStemmer()
+        pass
 
     def stem_sentence(self, arabic_sentence: str) -> str:
         """[summary]
@@ -16,9 +13,7 @@ class SnowballStemmer:
         :return: [description]
         :rtype: str
         """
-        arabic_words = arabic_sentence.split(" ")
-        arabic_stem_words = self.stemmer.stemWords(arabic_words)
-        return " ".join(arabic_stem_words)
+        pass
 
     def stem_word(self, arabic_word: str) -> str:
         """[summary]
@@ -28,4 +23,4 @@ class SnowballStemmer:
         :return: [description]
         :rtype: str
         """
-        return self.stemmer.stemWord(arabic_word)
+        pass
