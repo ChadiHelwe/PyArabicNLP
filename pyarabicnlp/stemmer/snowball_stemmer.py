@@ -1,19 +1,23 @@
-import snowballstemmer
+from snowballstemmer import ArabicStemmer
+from pyarabicnlp.stemmer.abstract_stemmer import AbstractStemmer
 
 
-class SnowballStemmer:
-    """[summary]
+class SnowballStemmer(AbstractStemmer):
+    """
+    Snowball stemmer for Arabic
     """
 
     def __init__(self):
-        self.stemmer = snowballstemmer.ArabicStemmer()
+        self.stemmer = ArabicStemmer()
 
     def stem_sentence(self, arabic_sentence: str) -> str:
-        """[summary]
+        """
+        This is a method that takes an arabic sentence
+        to stem each word of the sentence
         
-        :param arabic_sentence: [description]
+        :param arabic_sentence: a sentence in arabic
         :type arabic_sentence: str
-        :return: [description]
+        :return: a stemmed sentence in arabic
         :rtype: str
         """
         arabic_words = arabic_sentence.split(" ")
@@ -21,11 +25,13 @@ class SnowballStemmer:
         return " ".join(arabic_stem_words)
 
     def stem_word(self, arabic_word: str) -> str:
-        """[summary]
+        """
+        This is method that takes an arabic word
+        to stem it
         
-        :param arabic_word: [description]
+        :param arabic_word: a word in arabic
         :type arabic_word: str
-        :return: [description]
+        :return: a stemmed word in arabic
         :rtype: str
         """
         return self.stemmer.stemWord(arabic_word)

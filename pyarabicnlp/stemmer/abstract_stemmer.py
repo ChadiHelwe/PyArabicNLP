@@ -1,18 +1,22 @@
-from nltk.stem.isri import ISRIStemmer as ArabicISRIStemmer
-from pyarabicnlp.stemmer.abstract_stemmer import AbstractStemmer
+from abc import ABCMeta, abstractmethod
 
 
-class ISRIStemmer(AbstractStemmer):
+class AbstractStemmer(metaclass=ABCMeta):
     """
-    Isri stemmer for Arabic
+    This is an abstract class for the stemmers
+    
+    :param metaclass: [description], defaults to ABCMeta
+    :type metaclass: [type], optional
     """
 
+    @abstractmethod
     def __init__(self):
-        self.stemmer = ArabicISRIStemmer()
+        pass
 
+    @abstractmethod
     def stem_sentence(self, arabic_sentence: str) -> str:
         """
-        This is a method that takes an arabic sentence
+        This is an abstract method that takes an arabic sentence
         to stem each word of the sentence
         
         :param arabic_sentence: a sentence in arabic
@@ -20,13 +24,12 @@ class ISRIStemmer(AbstractStemmer):
         :return: a stemmed sentence in arabic
         :rtype: str
         """
-        arabic_words = arabic_sentence.split(" ")
-        arabic_stem_words = [self.stemmer.stem(word) for word in arabic_words]
-        return " ".join(arabic_stem_words)
+        pass
 
+    @abstractmethod
     def stem_word(self, arabic_word: str) -> str:
         """
-        This is method that takes an arabic word
+        This is an abstract method that takes an arabic word
         to stem it
         
         :param arabic_word: a word in arabic
@@ -34,4 +37,4 @@ class ISRIStemmer(AbstractStemmer):
         :return: a stemmed word in arabic
         :rtype: str
         """
-        return self.stemmer.stem(arabic_word)
+        pass
