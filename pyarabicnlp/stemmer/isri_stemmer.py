@@ -4,7 +4,7 @@ from pyarabicnlp.stemmer.abstract_stemmer import AbstractStemmer
 
 class ISRIStemmer(AbstractStemmer):
     """
-    Isri stemmer for Arabic
+    ISRI stemmer for Arabic
     """
 
     def __init__(self):
