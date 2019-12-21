@@ -106,4 +106,3 @@ class Buckwalter:
             except KeyError:
                 arabic_sentence += w
         return arabic_sentence
-
