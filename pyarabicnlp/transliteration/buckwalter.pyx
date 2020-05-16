@@ -1,3 +1,5 @@
+# distutils: language=c++
+
 class Buckwalter:
     """ 
     Buckwalter transliteration uses ASCII characters to represent
