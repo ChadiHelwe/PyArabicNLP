@@ -2,6 +2,8 @@ __pycache__/
 build/
 dist/
 pyarabicnlp.egg-info/
+.tox/
+.pytest_cache/
 *.cpp
 *.so
 *.pyc

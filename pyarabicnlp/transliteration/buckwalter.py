@@ -1,7 +1,5 @@
-# distutils: language=c++
-
 class Buckwalter:
-    """ 
+    """
     Buckwalter transliteration uses ASCII characters to represent
     Arabic Orthography
     """
@@ -71,11 +69,13 @@ class Buckwalter:
 
     def __init__(self):
 
-        self.BUCKWALTER_TO_ARABIC = {v: k for k, v in self.ARABIC_TO_BUCKWALTER.items()}
+        self.BUCKWALTER_TO_ARABIC = {
+            v: k for k, v in self.ARABIC_TO_BUCKWALTER.items()
+        }
 
-    def transform_to_buckwalter(self, str arabic_sentence: str) -> str:
+    def transform_to_buckwalter(self, arabic_sentence: str) -> str:
         """
-        This method takes a sentence in Arabic and transliterates 
+        This method takes a sentence in Arabic and transliterates
         it to a Buckwalter form
 
         :param arabic_sentence: a sentence tranformed in Arabic
@@ -83,8 +83,7 @@ class Buckwalter:
         :return:  a sentence transliterated to buckwalter
         :rtype: str
         """
-        cdef str buckwalter_sentence = ""
-        cdef str w
+        buckwalter_sentence = ""
 
         for w in arabic_sentence:
             try:
@@ -93,18 +92,18 @@ class Buckwalter:
                 buckwalter_sentence += w
         return buckwalter_sentence
 
-    def transform_to_arabic(self, str buckwalter_sentence: str) -> str:
+    def transform_to_arabic(self, buckwalter_sentence: str) -> str:
         """
         This method takes a sentence in a Buckwalter
-        sentence and transliterates to Arabic 
+        sentence and transliterates to Arabic
 
         :param buckwalter_sentence: a sentence in buckwalter
         :type buckwalter_sentence: str
         :return: a sentence transliterated to Arabic
         :rtype: str
         """
-        cdef str arabic_sentence = ""
-        cdef str w
+        arabic_sentence = ""
+
         for w in buckwalter_sentence:
             try:
                 arabic_sentence += self.BUCKWALTER_TO_ARABIC[w]

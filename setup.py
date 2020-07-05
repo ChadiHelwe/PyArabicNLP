@@ -1,26 +1,17 @@
-from pip._internal.req import parse_requirements
-from pip._internal.download import PipSession
 from distutils.extension import Extension
 from setuptools import setup, find_packages, Extension
 import os
 
-from Cython.Distutils import build_ext
-from Cython.Build import cythonize
-
-
 def read_requirements():
     """parses requirements from requirements.txt"""
-    install_reqs = parse_requirements("requirements.txt", session=PipSession())
-    reqs = [str(ir.req) for ir in install_reqs]
+    install_reqs = open("requirements.txt", "r").readlines()
+    reqs = [str(ir).strip() for ir in install_reqs]
+    print(reqs)
     return reqs
 
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
-
-ext_modules = [
-    Extension("buckwalter", ["pyarabicnlp/transliteration/buckwalter.pyx"])
-]
 
 setup(
     name="pyarabicnlp",  # Replace with your own username
@@ -38,9 +29,5 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.6",
-    cmdclass={"build_ext": build_ext},
-    ext_modules=cythonize(
-        ext_modules, compiler_directives={"language_level": "3"}
-    ),
+    python_requires=">=3.7",
 )
