@@ -1,8 +1,8 @@
 import os
 import re
-import requests
 from zipfile import ZipFile
 
+import requests
 from tqdm import tqdm
 
 PRETRAINED_WORD_EMBEDDINGS = {

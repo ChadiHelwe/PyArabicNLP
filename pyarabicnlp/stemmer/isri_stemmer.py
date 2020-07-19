@@ -1,4 +1,5 @@
 from nltk.stem.isri import ISRIStemmer as ArabicISRIStemmer
+
 from pyarabicnlp.stemmer.abstract_stemmer import AbstractStemmer
 
 

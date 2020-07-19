@@ -1,4 +1,5 @@
 from snowballstemmer import ArabicStemmer
+
 from pyarabicnlp.stemmer.abstract_stemmer import AbstractStemmer
 
 

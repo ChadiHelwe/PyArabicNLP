@@ -1,6 +1,8 @@
-from distutils.extension import Extension
-from setuptools import setup, find_packages, Extension
 import os
+from distutils.extension import Extension
+
+from setuptools import Extension, find_packages, setup
+
 
 def read_requirements():
     """parses requirements from requirements.txt"""
