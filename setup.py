@@ -1,7 +1,4 @@
-import os
-from distutils.extension import Extension
-
-from setuptools import Extension, find_packages, setup
+from setuptools import find_packages, setup
 
 
 def read_requirements():

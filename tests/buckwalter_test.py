@@ -1,6 +1,3 @@
-import os
-import sys
-
 from pyarabicnlp.transliteration.buckwalter import Buckwalter
 
 

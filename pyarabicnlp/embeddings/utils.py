@@ -120,6 +120,7 @@ def download_pretrained_word_embeddings(word_embeddings_name: str) -> None:
             f"Pretrained word embeddings available: {list_pretrained_embeddings}"
         )
 
+
 def clean_str(text: str):
     """[summary]
     
@@ -128,26 +129,72 @@ def clean_str(text: str):
     :return: [description]
     :rtype: [type]
     """
-    search = ["أ","إ","آ","ة","_","-","/",".","،"," و "," يا ",'"',"ـ","'","ى","\\",'\n', '\t','&quot;','?','؟','!']
-    replace = ["ا","ا","ا","ه"," "," ","","",""," و"," يا","","","","ي","",' ', ' ',' ',' ? ',' ؟ ',' ! ']
-    
-    #remove tashkeel
-    p_tashkeel = re.compile(r'[\u0617-\u061A\u064B-\u0652]')
-    text = re.sub(p_tashkeel,"", text)
-    
-    #remove longation
-    p_longation = re.compile(r'(.)\1+')
+    search = [
+        "أ",
+        "إ",
+        "آ",
+        "ة",
+        "_",
+        "-",
+        "/",
+        ".",
+        "،",
+        " و ",
+        " يا ",
+        '"',
+        "ـ",
+        "'",
+        "ى",
+        "\\",
+        "\n",
+        "\t",
+        "&quot;",
+        "?",
+        "؟",
+        "!",
+    ]
+    replace = [
+        "ا",
+        "ا",
+        "ا",
+        "ه",
+        " ",
+        " ",
+        "",
+        "",
+        "",
+        " و",
+        " يا",
+        "",
+        "",
+        "",
+        "ي",
+        "",
+        " ",
+        " ",
+        " ",
+        " ? ",
+        " ؟ ",
+        " ! ",
+    ]
+
+    # remove tashkeel
+    p_tashkeel = re.compile(r"[\u0617-\u061A\u064B-\u0652]")
+    text = re.sub(p_tashkeel, "", text)
+
+    # remove longation
+    p_longation = re.compile(r"(.)\1+")
     subst = r"\1\1"
     text = re.sub(p_longation, subst, text)
-    
-    text = text.replace('وو', 'و')
-    text = text.replace('يي', 'ي')
-    text = text.replace('اا', 'ا')
-    
+
+    text = text.replace("وو", "و")
+    text = text.replace("يي", "ي")
+    text = text.replace("اا", "ا")
+
     for i in range(0, len(search)):
         text = text.replace(search[i], replace[i])
-    
-    #trim    
+
+    # trim
     text = text.strip()
 
     return text
