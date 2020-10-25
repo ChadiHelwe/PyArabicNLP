@@ -2,5 +2,5 @@
 def __download_model():
     pass
 
-class NERClassfier():
+class NERClassifier():
     pass
