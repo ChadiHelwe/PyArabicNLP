@@ -39,7 +39,7 @@ class FileSizeError(Exception):
         self.message = "FileSizeError: Wrong file size"
 
 
-def ___download(path: str, folder_name: str, file_name: str) -> None:
+def __download(path: str, folder_name: str, file_name: str) -> None:
     """
     Private helper method to download the pretrained word embeddings
     
@@ -109,7 +109,7 @@ def download_pretrained_word_embeddings(word_embeddings_name: str) -> None:
         if word_embeddings_name not in PRETRAINED_WORD_EMBEDDINGS.keys():
             raise EmbeddingFileNameError()
 
-        ___download(path, folder_name, word_embeddings_name)
+        __download(path, folder_name, word_embeddings_name)
 
     except EmbeddingFileNameError as e:
         list_pretrained_embeddings = " ".join(
