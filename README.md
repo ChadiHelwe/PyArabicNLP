@@ -4,7 +4,7 @@ A Python library for Arabic NLP.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install PyArabicNLP.
 
 ```bash
 pip install pyarabicnlp
