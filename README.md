@@ -1,5 +1,7 @@
 # PyArabicNLP
 
+[![Downloads](https://pepy.tech/badge/pyarabicnlp)](https://pepy.tech/project/pyarabicnlp)
+
 A Python library for Arabic NLP.
 
 ## Installation
