@@ -1,6 +1,6 @@
 # PyArabicNLP
 
-[![Downloads](https://pepy.tech/badge/pyarabicnlp)](https://pepy.tech/project/pyarabicnlp)
+[![Build Status](https://travis-ci.com/ChadiHelwe/PyArabicNLP.svg?branch=master)](https://travis-ci.com/ChadiHelwe/PyArabicNLP) [![Downloads](https://pepy.tech/badge/pyarabicnlp)](https://pepy.tech/project/pyarabicnlp) 
 
 A Python library for Arabic NLP.
 
