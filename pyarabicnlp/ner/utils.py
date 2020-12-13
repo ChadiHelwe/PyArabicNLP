@@ -38,8 +38,8 @@ def clean_label(ner_label: str) -> str:
 
 def ner_label_to_id(ner_label: str) -> int:
     """
-    return the id of the ner label 
-    
+    return the id of the ner label
+
     :param ner_label: ner label
     :type ner_label: str
     :return: id of the ner label

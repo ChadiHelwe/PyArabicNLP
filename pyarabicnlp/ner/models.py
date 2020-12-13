@@ -1,8 +1,8 @@
-
 def __download_model():
     pass
 
-class NERClassifier():
+
+class NERClassifier:
     def __init__(self):
         pass
 
@@ -11,4 +11,3 @@ class NERClassifier():
 
     def predict(self):
         pass
-
