@@ -4,3 +4,5 @@ dist/
 *.cpp
 *.so
 *.pyc
+*.egg-info
+*.tox
