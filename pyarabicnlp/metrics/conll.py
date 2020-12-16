@@ -242,7 +242,7 @@ def start_of_chunk(prev_tag, tag, prev_type, type_):
 
     return chunk_start
 
-def eval_f1score(file_):
+def ner_score(file_):
 
     with open(file_) as f:
         counts = evaluate(f)
